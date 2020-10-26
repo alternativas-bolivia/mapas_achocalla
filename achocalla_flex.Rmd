@@ -1,0 +1,224 @@
+---
+title: "Achocalla"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(downloadthis)
+```
+
+
+
+1. Descripción Proyecto
+===================================== 
+
+
+
+<br><br><br>
+
+<center>
+<img src="input/iconos/alternativas.png" width= 15%  align = "center" />
+<br><br>
+<img src="input/iconos/Logo UNHABITAT.png" width= 20%  align = "center" />
+</center>
+<br><br><br>
+
+
+<h4><center>
+Fundación Alternativas en asocio con ONU Hábitat-Bolivia llevan a cabo el proyecto “Barrios Precarios, Seguridad Alimentaria y COVID-19 en la Región Metropolitana de La Paz” con el objetivo de elaborar de Planes de Contingencia Alimentaria que contienen estrategias y acciones centradas en garantizar el abastecimiento continúo de alimentos variados y suficientes en el municipio y mediante una mejor articulación con municipios vecinos y de la región metropolitana. Complementariamente se elaboró este “Mapa de Distritos, Productivo y de Vulnerabilidad”, para compartir la información generada con el gobierno municipal y todos los actores que participaron en el desarrollo de este proyecto. Esperamos que sea de utilidad y podamos seguir promoviendo Sistemas Alimentarios Integrales.
+<br><br>
+El equipo de Fundación Alternativas
+</center></h4>
+
+
+2. Mapa
+===================================== 
+
+
+### Mapa de Distritos, Productivo y de Vulnerabilidad
+
+<iframe frameBorder="0" src="output/mapas/03.Achocalla.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+Los límites municipales y de distritos tienen fuente en los Planes Territoriales de Desarrollo Integral de cada municipio y fueron dibujados a partir de entrevistas con personal del gobierno municipal.
+
+
+
+3. Descargas
+===================================== 
+
+
+### Información para descargar
+
+<h3>Descargue el Plan de Contingencia Alimentaria y las capas presentadas en el “Mapa de Distritos, Productivo y de Vulnerabilidad”</h3>
+
+<br>
+
+<h4>Descarga el Plan de Contingencia del Municipio:</h4>
+
+```{r }
+
+
+download_link(
+  link = "https://github.com/alternativas-bolivia/mapas_achocalla/raw/main/PCA%20Achocalla_FINAL%20web.pdf",
+  button_label = "Plan Contingencia PDF",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+
+
+```
+
+
+<h4>Descarga los Mapas:</h4>
+
+[<img src="input/descarga_mapa.png" width= 14.8%  align = "left" />](https://github.com/alternativas-bolivia/mapas_achocalla/tree/main/03.%20Achocalla)
+<br>
+<br>
+<h4>Descarga los datos en formato csv:</h4>
+
+Límite Municipal:
+
+
+```{r }
+
+
+rio::import("output/excel/achocalla/limite_mun.xlsx") %>%
+  download_this(
+    output_name = "distritos",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+
+Distritos:
+
+```{r }
+
+
+rio::import("output/excel/achocalla/distritos.xlsx") %>%
+  download_this(
+    output_name = "distritos",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+Sectores:
+
+
+
+```{r }
+
+
+rio::import("output/excel/achocalla/sectores.xlsx") %>%
+  download_this(
+    output_name = "sectores",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+
+Comunidades:
+
+
+```{r }
+
+
+rio::import("output/excel/achocalla/pobreza_extrema.xlsx") %>%
+  download_this(
+    output_name = "pobreza_extrema",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+
+Rutas de Comercio Alimentos:
+
+
+```{r }
+
+
+rio::import("output/excel/achocalla/rutas.xlsx") %>%
+  download_this(
+    output_name = "rutas_acceso",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+Mercados Destino:
+
+
+```{r }
+
+
+rio::import("output/excel/achocalla/mercados_destino.xlsx") %>%
+  download_this(
+    output_name = "mercados_destino",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+Mercados Región Metropolitana:
+
+
+```{r }
+
+
+rio::import("output/excel/achocalla/mercados.xlsx") %>%
+  download_this(
+    output_name = "mercados",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+Principales Rubros:
+
+
+```{r }
+
+
+rio::import("output/excel/achocalla/rubros.xlsx") %>%
+  download_this(
+    output_name = "rubros",
+    output_extension = ".csv",
+    button_label = "Descargar datos como CSV",
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+
